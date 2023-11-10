@@ -158,7 +158,7 @@ const time = setInterval(() => {
     function author(){
         ctx.font = "15px Arial";
         ctx.fillStyle = "black";
-        ctx.fillText('.Gagne, et envoie une capture au 63591464 pour avoir 1000F ----- by Alexis Katel', canvas.width - 560, 5);
+        ctx.fillText('.Gagne, et envoie une capture au 63591464 pour avoir 1000F ----- by Alexis Katel', canvas.width - 560, 15);
     }
 
     function draw() {
