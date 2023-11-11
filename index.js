@@ -86,7 +86,7 @@ const time = setInterval(() => {
                 var b = bricks[c][r];
                 if(b.status == 1) {
                     if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
-                        dy = -dy + 0.2;
+                        dy = -dy ((Math.random()*50 + 50)/100);
                         b.status = 0;
                         score++;
                         if(score == brickColumnCount*brickRowCount){
