@@ -174,7 +174,7 @@ const time = setInterval(() => {
             dx = -dx;
         }
         if(y + dy < ballRadius) {
-            dy = -dy -20;
+            dy = -dy ;
         }
         else if(y + dy > canvas.height-ballRadius)
         {
