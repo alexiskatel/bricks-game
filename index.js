@@ -89,7 +89,7 @@ function collisionDetection() {
         ) {
           dy = -dy
           b.status = 0;
-          if(Math.random() > 0.8) {
+          if(Math.random() > 0.85) {
             dx = -dx - (Math.random() * 20 + 40) / 100;
           }
           score++;
