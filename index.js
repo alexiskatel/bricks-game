@@ -67,13 +67,22 @@ function keyUpHandler(e) {
 }
 
 if (window.innerWidth < 768) {
-  document.addEventListener('mousemove', mouseMoveHandler, false);
+  canvas.addEventListener('touchstart', touchStartHandler, false);
+  canvas.addEventListener('touchmove', touchMoveHandler, false);
+}
 
-  function mouseMoveHandler(e){
-      var relativeX = e.clientX - canvas.offsetLeft - paddleWidth/2;
-      if(relativeX > 0 && relativeX < canvas.width){
-          paddleX = relativeX
-      }
+function touchStartHandler(e) {
+  e.preventDefault();
+  var touch = e.touches[0];
+  paddleX = touch.clientX - canvas.offsetLeft - paddleWidth / 2;
+}
+
+function touchMoveHandler(e) {
+  e.preventDefault();
+  var touch = e.touches[0];
+  var relativeX = touch.clientX - canvas.offsetLeft - paddleWidth / 2;
+  if (relativeX > 0 && relativeX < canvas.width) {
+    paddleX = relativeX;
   }
 }
 
