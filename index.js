@@ -87,7 +87,7 @@ function collisionDetection() {
           y > b.y &&
           y < b.y + brickHeight
         ) {
-          dy = -dy;
+          dy = -dy + (Math.random() * 20 + 40) / 100;
           b.status = 0;
           score++;
           if (score == brickColumnCount * brickRowCount) {
@@ -139,9 +139,10 @@ function drawBricks() {
 }
 
 function drawScore() {
-  ctx.font = "30px Arial";
+  ctx.font = "25px Arial";
   ctx.fillStyle = "blue";
   ctx.fillText("Score: " + score, 8, 30);
+  ctx.fillText("/33", 120, 30);
 }
 
 function gameOver() {
@@ -168,7 +169,7 @@ function author() {
   ctx.font = "15px Arial";
   ctx.fillStyle = "black";
   ctx.fillText(
-    ".Gagne, et envoie une capture de tout l'écran au 63591464 pour avoir 1000F ----- by Alexis Katel",
+    "Gagne, et envoie une capture de tout l'écran au 63591464 pour avoir 1000F ----- by Alexis Katel",
     canvas.width - 645,
     15
   );
@@ -190,7 +191,7 @@ function draw() {
     dy = -dy;
   } else if (y + dy > canvas.height - ballRadius) {
     if (x >= paddleX && x <= paddleX + paddleWidth) {
-      dy = -dy - (Math.random() * 40 + 40) / 100;
+      dy = -dy - (Math.random() * 100 + 100) / 100;
     } else {
       gameOver();
       clearInterval(interval);
