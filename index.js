@@ -87,8 +87,11 @@ function collisionDetection() {
           y > b.y &&
           y < b.y + brickHeight
         ) {
-          dy = -dy + (Math.random() * 20 + 40) / 100;
+          dy = -dy
           b.status = 0;
+          if(Math.random() > 0.8) {
+            dx = -dx - (Math.random() * 20 + 40) / 100;
+          }
           score++;
           if (score == brickColumnCount * brickRowCount) {
             win();
