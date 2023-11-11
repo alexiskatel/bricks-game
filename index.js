@@ -171,10 +171,10 @@ const time = setInterval(() => {
         drawScore();
 
         if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
-            dx = -dx - 20;
+            dx = -dx;
         }
         if(y + dy < ballRadius) {
-            dy = -dy ;
+            dy = -dy -20;
         }
         else if(y + dy > canvas.height-ballRadius)
         {
