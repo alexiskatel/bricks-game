@@ -158,7 +158,7 @@ const time = setInterval(() => {
     function author(){
         ctx.font = "15px Arial";
         ctx.fillStyle = "black";
-        ctx.fillText('.Gagne, et envoie une capture de tout l\'écran au 63591464 pour avoir 1000F ----- by Alexis Katel', canvas.width - 645, 15);
+        ctx.fillText('Gagne, et envoie une capture de tout l\'écran au 63591464 pour avoir 1000F ----- by Alexis Katel', canvas.width - 645, 15);
     }
 
     function draw() {
@@ -179,7 +179,7 @@ const time = setInterval(() => {
         else if(y + dy > canvas.height-ballRadius)
         {
             if(x >= paddleX && x <= paddleX + paddleWidth){
-                dy = -dy - 20;
+                dy = -dy - ((Math.random()*50 +40)/100);
             }
             else{
                 gameOver();
