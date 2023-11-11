@@ -66,25 +66,7 @@ function keyUpHandler(e) {
   }
 }
 
-if (window.innerWidth < 768) {
-  canvas.addEventListener('touchstart', touchStartHandler, false);
-  canvas.addEventListener('touchmove', touchMoveHandler, false);
-}
 
-function touchStartHandler(e) {
-  e.preventDefault();
-  var touch = e.touches[0];
-  paddleX = touch.clientX - canvas.offsetLeft - paddleWidth / 2;
-}
-
-function touchMoveHandler(e) {
-  e.preventDefault();
-  var touch = e.touches[0];
-  var relativeX = touch.clientX - canvas.offsetLeft - paddleWidth / 2;
-  if (relativeX > 0 && relativeX < canvas.width) {
-    paddleX = relativeX;
-  }
-}
 
 function collisionDetection() {
   for (var c = 0; c < brickColumnCount; c++) {
@@ -204,7 +186,7 @@ function draw() {
     dy = -dy;
   } else if (y + dy > canvas.height - ballRadius) {
     if (x >= paddleX && x <= paddleX + paddleWidth) {
-      dy = -dy - (Math.random() * 50 + 70) / 100;
+      dy = -dy - (Math.random() * 40 + 50) / 100;
     } else {
       gameOver();
       clearInterval(interval);
