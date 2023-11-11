@@ -66,15 +66,16 @@ function keyUpHandler(e) {
   }
 }
 
-//Controle du jeu avec la souris
-// document.addEventListener('mousemove', mouseMoveHandler, false)
+if (window.innerWidth < 768) {
+  document.addEventListener('mousemove', mouseMoveHandler, false);
 
-// function mouseMoveHandler(e){
-//     var relativeX = e.clientX - canvas.offsetLeft - paddleWidth/2;
-//     if(relativeX > 0 && relativeX < canvas.width){
-//         paddleX = relativeX
-//     }
-// }
+  function mouseMoveHandler(e){
+      var relativeX = e.clientX - canvas.offsetLeft - paddleWidth/2;
+      if(relativeX > 0 && relativeX < canvas.width){
+          paddleX = relativeX
+      }
+  }
+}
 
 function collisionDetection() {
   for (var c = 0; c < brickColumnCount; c++) {
