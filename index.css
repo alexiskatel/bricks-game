@@ -25,6 +25,10 @@ h1{
     display: flex;
 }
 
+.classement {
+    padding-left: 1rem;
+}
+
 p {
     font-weight: bold;
     text-decoration: underline;
