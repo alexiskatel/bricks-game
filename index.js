@@ -81,7 +81,7 @@ function collisionDetection() {
         ) {
           dy = -dy
           b.status = 0;
-          if(Math.random() > 0.75) {
+          if(Math.random() > 0.70) {
             dx = -dx - (Math.random() * 20 + 40) / 100;
           }
           score++;
@@ -186,7 +186,7 @@ function draw() {
     dy = -dy;
   } else if (y + dy > canvas.height - ballRadius) {
     if (x >= paddleX && x <= paddleX + paddleWidth) {
-      dy = -dy - (Math.random() * 40 + 50) / 100;
+      dy = -dy - (Math.random() * 50 + 50) / 100;
     } else {
       gameOver();
       clearInterval(interval);
