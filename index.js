@@ -81,8 +81,8 @@ function collisionDetection() {
         ) {
           dy = -dy
           b.status = 0;
-          if(Math.random() > 0.65) {
-            dx = -dx - (Math.random() * 20 + 40) / 100;
+          if(Math.random() > 0.90) {
+            dx = -dx - (Math.random() * 20 + 60) / 100;
           }
           score++;
           if (score == brickColumnCount * brickRowCount) {
